@@ -8,8 +8,8 @@ class Hexagon {
 		};
 		this.x = x;
 		this.y = y;
-		this.radius = 40;
-		this.body = Matter.Bodies.circle(x, y, 40, options);
+		this.radius = 20;
+		this.body = Matter.Bodies.circle(x, y, 20, options);
 		this.image = loadImage("hexagon1.png");
 		World.add(world, this.body);
 	}

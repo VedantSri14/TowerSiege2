@@ -70,7 +70,7 @@ function setup() {
 
 	box25 = new Box(890, 110, 40, 60);
 
-	slingshot = new Sling(striker.body, { x: 50, y: 200 });
+	slingshot = new Sling(striker.body, { x: 90, y: 200 });
 
 	Engine.run(engine);
 }
@@ -136,15 +136,17 @@ function draw() {
 	box25.display();
 
 	slingshot.display();
+
+	keyPressed();
 }
 function mouseDragged() {
-	Matter.body.setPosition({ x: mouseX, y: mouseY });
+	Matter.Body.setPosition(striker.body, { x: mouseX, y: mouseY });
 }
 function mouseReleased() {
 	slingshot.fly();
 }
 function keyPressed() {
-	if (keyCode === 32) {
-		slingshot.attach(body);
+	if (keyCode === 32 ) {
+		slingshot.attach(striker.body);
 	}
 }
